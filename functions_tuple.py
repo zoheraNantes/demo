@@ -39,3 +39,13 @@ print(t.count(20))  # 2 → le 20 apparaît 2 fois
 # -------------------------
 # Donne la position (indice) de la première occurrence
 print(t.index(30))  # 2 → 30 est à la position 2
+
+
+def make_sum(*integers):
+    total = 0
+    for integer in integers:
+        total += integer
+    return total
+
+t= (1,2,3,4,5,6,7,8,9,10)
+print(t[3])
