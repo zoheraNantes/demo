@@ -55,7 +55,50 @@ import operator
 # =========================
 
 # d2.items() renvoie les couples (clé, valeur)
-# itemgetter(0) indique de trier selon l'élément d'indice 0,
-# c'est-à-dire la clé
+# itemgetter(0) indique de trier selon l'élément d'indice 0 (la clé)
 for k, v in sorted(d2.items(), key=operator.itemgetter(0)):
     print(k, ':', v)
+
+
+# =========================
+# CONFIGURATION
+# =========================
+
+def read_configuration(filename):
+    return {
+        "host": "localhost",
+        "port": 5432
+    }
+
+
+def f(**kwargs):
+    conf = read_configuration("config.json")  # lecture config par défaut
+    conf.update(kwargs)  # écrase / complète avec kwargs
+    print(conf)
+
+
+# appel de la fonction (EN DEHORS de la fonction)
+f(host="127.0.0.1", port=5432, user='root', pwd='')
+
+
+# =========================
+# LISTE
+# =========================
+
+l = [1, 2, 3, 4, 5]
+
+# slicing avec pas de 2
+print(l[::2])  # prend 1 élément sur 2 → [1, 3, 5]
+
+
+# =========================
+# STRING
+# =========================
+
+s = "je suis une string"
+
+# découpe avec pas de 2 entre index 4 et -2
+print(s[4:-2:2])
+
+# les 5 premiers caractères
+print(s[:5])
