@@ -1,5 +1,6 @@
 
 print("Table de multiplications")
+
 nb = int(input("enter a nombre: "))
 
 i = 0
